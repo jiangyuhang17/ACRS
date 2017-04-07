@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>空调租赁用户界面</title>
+    <link href="base.css" rel="stylesheet">
+    <link href="platform.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="pf-hd">
+        <div class="pf-logo">
+            <img src="imgs/main/logo.png" alt="logo">
+            <h1 class="system-name">空调租赁用户界面</h1>
+        </div>
+
+        <ul class="pf-nav">
+            <li class="pf-nav-item">
+                <a href="\user">
+                    <span class="pf-nav-icon project-icon"></span>
+                    <span class="pf-nav-title">租赁缴费</span>
+                </a>
+            </li>
+            <li class="pf-nav-item">
+                <a href="\history">
+                    <span class="pf-nav-icon static-icon"></span>
+                    <span class="pf-nav-title">查询历史</span>
+                </a>
+            </li>
+            <li class="pf-nav-item current">
+                <a href="\userinfo">
+                    <span class="pf-nav-icon manger-icon"></span>
+                    <span class="pf-nav-title">用户信息</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="pf-user">
+            <div class="pf-user-photo">
+                <img src="imgs/main/user.png" alt="">
+            </div>
+            <h4 class="pf-user-name ellipsis">&nbsp;&nbsp;User</h4>
+            <i class="iconfont xiala">&#xe618;</i>
+
+            <div class="pf-user-panel">
+                <ul class="pf-user-opt">
+                    <li>
+                        <a href="\userinfo">
+                            <i class="iconfont">&#xe606;</i>
+                            <span class="pf-opt-name">用户信息</span>
+                        </a>
+                    </li>
+                    <li class="pf-modify-pwd">
+                        <a  href="\passchange">
+                            <i class="iconfont">&#xe613;</i>
+                            <span class="pf-opt-name">修改密码</span>
+                        </a>
+                    </li>
+                    <li class="pf-logout">
+                        <a href="/">
+                            <i class="iconfont">&#xe60e;</i>
+                            <span class="pf-opt-name">退出</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="pf-bd">
+            <div id="pf-sider">
+                <h2 class="pf-model-name">
+                    <span class="pf-sider-icon"></span>
+                    <span class="pf-name">项目</span>
+                </h2>
+
+                <ul class="sider-nav">
+                    <li class="current">
+                        <a href="\userinfo">
+                            <img src="imgs/main/l01.png">
+                            <span class="sider-nav-title">用户资料</span>
+                            <i class="iconfont">&#xe611;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="\passchange">
+                            <img src="imgs/main/l05.png">
+                            <span class="sider-nav-title">密码修改</span>
+                            <i class="iconfont">&#xe611;</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="pf-page">
+                <div class="container">
+                    <div id="inner-hd">
+                        <div class="crumbs">
+                            <i class="crumbs-arrow"></i>
+                            <a class="crumbs-label">修改资料</a>
+                        </div>
+                    </div>
+
+                    <div id="inner-bd">
+                        <form id="infochange" name="infochange" action="infochange" method="post">
+                            <div class="button-group">
+                                <a>
+                                    <button type="submit" class="button current add" onClick="return changetest()">
+                                        <i class="iconfont">&#xe76a;</i>
+                                        <span class="button-label">保存</span>
+                                    </button>
+                                </a>
+                                <a href="/userinfo">
+                                    <button type="button" class="button current add">
+                                        <i class="iconfont">&#xe76a;</i>
+                                        <span class="button-label">取消</span>
+                                    </button>
+                                </a>
+                            </div>
+
+                            <table class="kv-table">
+                                <tbody>
+                                <tr>
+                                    <td class="kv-label" style="padding-left:31px;">
+                                        用户名：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <%= username %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        <span class="redstar">*</span>
+                                        姓名：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="text" name="myname" <%= name %> style="width:290px;" />
+                                        <span id="span1" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        <span class="redstar">*</span>
+                                        学号：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="text" name="mynum" <%= num %> style="width:290px;" />
+                                        <span id="span2" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        <span class="redstar">*</span>
+                                        手机号：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="text" name="myphone" <%= phone %> style="width:290px;"  />
+                                        <span id="span3" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        <span class="redstar">*</span>
+                                        宿舍：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <%= room %>
+                                        <a href="roomchange">
+                                            <button type="button" class="button current add" style="vertical-align: middle; margin-left:20px; ;">
+                                                <i class="iconfont">&#xe76a;</i>
+                                                <span class="button-label">修改</span>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label" style="padding-left:31px;">
+                                        邮箱：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="text" name="mymail" <%= mail %> style="width:290px;" />
+                                        <span id="span5" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </form>
+                    </div>
+
+                    <div id="inner-ft">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function changetest(){
+        if(document.forms["infochange"]["myname"].value==''){
+            $("#span1").html('<font color=red>姓名不能为空!</font>');
+            return false;
+        }else{$("#span1").html('');}
+        if(document.forms["infochange"]["mynum"].value==''){
+            $("#span2").html('<font color=red>学号不能为空!</font>');
+            return false;
+        }else if(!(/^[0-9]{1,}$/.test(document.forms["infochange"]["mynum"].value))){
+            $("#span2").html('<font color=red>学号格式不正确!</font>');
+            return false;
+        }else{$("#span2").html('');}
+        if(document.forms["infochange"]["myphone"].value==''){
+            $("#span3").html('<font color=red>手机号不能为空!</font>');
+            return false;
+        }else if(!(/^[0-9]{1,}$/.test(document.forms["infochange"]["myphone"].value))){
+            $("#span3").html('<font color=red>手机号格式不正确!</font>');
+            return false;
+        }else{$("#span3").html('');}
+
+        var mail = document.forms["infochange"]["mymail"].value;
+        var mailtest = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,5})+$/;
+        if(mail=='')
+            return true;
+        else if(!mailtest.test(mail)){
+            $("#span5").html('<font color=red>邮箱格式不正确!</font>');
+            return false;
+        }else{$("#span5").html('');}
+    }
+</script>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

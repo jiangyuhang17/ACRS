@@ -1,0 +1,63 @@
+@charset "utf-8";
+body{
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background:url(../images/log_before/login_bg.png) top;
+	font-family:"微软雅黑";
+}
+
+#topindex{
+	height:50px;
+	width:100%;
+	font-size:14px;
+	background-color:#666;
+	opacity:0.8;
+	text-align:center;
+}
+
+#title{
+	margin-top:15px;
+	font-size:44px;
+	height:100px;
+	width:100%;
+	color:#fff;
+	text-align:center;
+}
+#end{
+width:100%; height:35px; line-height:35px; background:#ccc; position:fixed; bottom:0px; left:0px; font-size:14px; color:#000; text-align:center;
+}
+
+.redstar{color:#F00;}
+
+body .left-bg{position:absolute;left:0;top:50%;width:659px;height:567px;margin-top:-284px;background:url(../images/log_before/login_left.png) no-repeat;opacity:0.6}
+body .right-bg{position:absolute;right:0;top:50%;width:661px;height:567px;margin-top:-284px;background:url(../images/log_before/login_right.png) no-repeat;opacity:0.6}
+
+body .notice-center{position:absolute;left:50%;top:200px;margin-left:-551px;width:1102px;height:602px;background-color:#fff;border-radius:12px}
+body .notice-center .notice-center-left{position:absolute;top:44px;left:-18px;width:18px;height:250px;background:url(../images/log_before/notice_left.png) no-repeat}
+body .notice-center .notice-center-top{position:absolute;top:0;left:0;width:1102px;height:151px;background:url(../images/log_before/notice_top.png) no-repeat;z-index:0}
+body .notice-center .notice-center-bottom{position:absolute;bottom:-1px;left:0;width:1102px;height:43px;background:url(../images/log_before/notice_foot.png) no-repeat}
+body .notice-center .notice-title{position:relative;height:30px;line-height:30px;margin-top:30px;z-index:100}
+body .notice-center .notice-title .notice-icon{float:left;margin-top:6px;margin-left:30px;margin-right:6px;display:inline-block;width:20px;height:20px;background:url(../images/log_before/login_lb.png) no-repeat}
+body .notice-center .notice-title span{float:left;font-size:24px;color:#fd9604}
+body .notice-center .notice-name{position:relative;line-height:50px;height:50px;color:#000;text-align:center;font-size:22px;z-index:100}
+body .notice-center .notice-time{position:relative;line-height:30px;height:30px;color:#969696;text-align:center;font-size:14px;margin-bottom:15px;z-index:100}
+body .notice-center .notice-wrap{padding:0px 65px}
+body .notice-center .notice-wrap .notice-content{border-top:1px solid #dedede}
+body .notice-center .notice-wrap .notice-content p{line-height:25px;color:#000;font-size:16px;margin-top:30px}
+body .notice-center .notice-wrap .notice-content p:last-child{margin-bottom:20px}
+
+body .notice-center .name{position:absolute;margin-top:40px;margin-left:270px;text-align:left;font-size:20px;z-index:100;}
+body .notice-center .mail{position:absolute;margin-top:40px;margin-left:540px;text-align:left;font-size:20px;z-index:100;}
+body .notice-center .contactcontent{position:absolute;margin-top:140px;margin-left:270px;text-align:left;font-size:20px;z-index:100;}
+
+body .notice-center .sub_btn{position:absolute;margin-top:400px;margin-left:270px;width:264px;height:50px;width:240px;line-height:48px;color:#fff;font-size:20px;z-index:100;background:url(../images/log_before/regbg_fir.jpg);text-align:center;cursor:pointer}
+body .notice-center .sub_btn:hover{background:url(../images/log_before/regbg.jpg)}
+
+body .notice-center .reset_btn{position:absolute;margin-top:400px;margin-left:530px;width:155px;height:50px;line-height:48px;color:#fff;font-size:20px;z-index:100;background:url(../images/log_before/regbg_fir.jpg);text-align:center;cursor:pointer}
+body .notice-center .reset_btn:hover{background:url(../images/log_before/regbg.jpg)}

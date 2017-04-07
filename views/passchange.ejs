@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>空调租赁用户界面</title>
+    <link href="base.css" rel="stylesheet">
+    <link href="platform.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="pf-hd">
+        <div class="pf-logo">
+            <img src="imgs/main/logo.png" alt="logo">
+            <h1 class="system-name">空调租赁用户界面</h1>
+        </div>
+
+        <ul class="pf-nav">
+            <li class="pf-nav-item">
+                <a href="\user">
+                    <span class="pf-nav-icon project-icon"></span>
+                    <span class="pf-nav-title">租赁缴费</span>
+                </a>
+            </li>
+            <li class="pf-nav-item">
+                <a href="\history">
+                    <span class="pf-nav-icon static-icon"></span>
+                    <span class="pf-nav-title">查询历史</span>
+                </a>
+            </li>
+            <li class="pf-nav-item current">
+                <a href="\userinfo">
+                    <span class="pf-nav-icon manger-icon"></span>
+                    <span class="pf-nav-title">用户信息</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="pf-user">
+            <div class="pf-user-photo">
+                <img src="imgs/main/user.png" alt="">
+            </div>
+            <h4 class="pf-user-name ellipsis">&nbsp;&nbsp;User</h4>
+            <i class="iconfont xiala">&#xe618;</i>
+
+            <div class="pf-user-panel">
+                <ul class="pf-user-opt">
+                    <li>
+                        <a href="\userinfo">
+                            <i class="iconfont">&#xe606;</i>
+                            <span class="pf-opt-name">用户信息</span>
+                        </a>
+                    </li>
+                    <li class="pf-modify-pwd">
+                        <a href="\passchange">
+                            <i class="iconfont">&#xe613;</i>
+                            <span class="pf-opt-name">修改密码</span>
+                        </a>
+                    </li>
+                    <li class="pf-logout">
+                        <a href="/">
+                            <i class="iconfont">&#xe60e;</i>
+                            <span class="pf-opt-name">退出</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="pf-bd">
+            <div id="pf-sider">
+                <h2 class="pf-model-name">
+                    <span class="pf-sider-icon"></span>
+                    <span class="pf-name">项目</span>
+                </h2>
+
+                <ul class="sider-nav">
+                    <li>
+                        <a href="\userinfo">
+                            <img src="imgs/main/l01.png">
+                            <span class="sider-nav-title">用户资料</span>
+                            <i class="iconfont">&#xe611;</i>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="\passchange">
+                            <img src="imgs/main/l05.png">
+                            <span class="sider-nav-title">密码修改</span>
+                            <i class="iconfont">&#xe611;</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="pf-page">
+                <div class="container">
+                    <div id="inner-hd">
+                        <div class="crumbs">
+                            <i class="crumbs-arrow"></i>
+                            <a class="crumbs-label">修改密码</a>
+                        </div>
+                    </div>
+
+                    <div id="inner-bd">
+                        <form id="change" name="change" action="/passchange" method="post">
+                            <div class="button-group">
+                                <button type="submit" class="button current add" onClick="return passtest()">
+                                    <i class="iconfont">&#xe76a;</i>
+                                    <span class="button-label">保存</span>
+                                </button>
+
+                            </div>
+
+                            <table class="kv-table">
+                                <tbody>
+                                <tr>
+                                    <td class="kv-label">
+                                        用户名：
+                                    </td>
+                                    <td class="kv-content" style="padding: 15px;">
+                                        <%= username %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        原始密码：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="password" id="origin_pass" name="origin_pass" placeholder="请输入原密码">
+                                        <span id="span1" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        新密码：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="password" id="new_pass" name="new_pass" placeholder="6-20字符，区分大小写">
+                                        <span id="span2" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="kv-label">
+                                        确认密码：
+                                    </td>
+                                    <td class="kv-content" style="padding: 10px;">
+                                        <input type="password" id="re_pass" name="re_pass" placeholder="请再次输入新密码">
+                                        <span id="span3" style="margin-left:10px;"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+
+                        </form>
+                    </div>
+
+                    <div id="inner-ft">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function passtest(){
+        var o = document.forms["change"]["origin_pass"].value;
+        var n = document.forms["change"]["new_pass"].value;
+        var l = n.length;
+        var r = document.forms["change"]["re_pass"].value;
+        if(l<6||l>20){
+            $("#span2").html('<font color=red>密码格式不正确!</font>');
+            return false;
+        }else{$("#span2").html('');}
+        if(o==n){
+            $("#span2").html('<font color=red>与原密码相同!</font>');
+            return false;
+        }else{$("#span2").html('');}
+        if(n!=r){
+            $("#span3").html('<font color=red>两次密码不一致!</font>');
+            return false;
+        }else{$("#span3").html('');}
+
+    }
+</script>
+<script>
+    function a(){
+        alert("原密码错误");
+    }
+    <%= error %>
+</script>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

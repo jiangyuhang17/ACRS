@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <title>用户注册</title>
+</head>
+
+<body>
+<div class="left-bg"></div>
+<div class="right-bg"></div>
+<div id="topindex">
+    <table width="100%">
+        <tr style="height:17px">
+            <td>
+            <td>
+        </tr>
+        <tr>
+            <td style="padding-left:20px; width:50%"><span style=" float:left;color: #FFF; font-family:'Times New Roman', Times, serif">欢迎来到空调租赁缴费平台</span><td>
+            <td style="padding-right:30px"><span style=" float:right; font-family:'Times New Roman', Times, serif">
+            	<a style="color:#FFF;padding-right:20px" href="/">首页</a>
+                <a style="color:#FFF" href="/contact">联系我们</a>
+            </span></td>
+        </tr>
+    </table>
+</div>
+
+<div id="title"><img src="/images/log_before/logo.png"></div>
+
+<div class="notice-center">
+    <div class="notice-center-top"></div>
+    <div class="notice-center-left"></div>
+    <div class="notice-center-bottom"></div>
+    <img id="process" src="/images/log_before/processtwo.jpg">
+    <form id="infoform" action="/register_sec" method="post">
+        <div class="div_form" style="margin-left:310px;">
+            <span class="redstar">*</span>
+            姓名 :
+            <input id="tname" name="tname" class="div_table" type="text" maxlength="24">
+            <span id="span1"></span>
+        </div>
+        <div class="div_form" style="margin-left:310px;">
+            <span class="redstar">*</span>
+            学号 :
+            <input id="number" name="number" class="div_table" type="text" maxlength="24">
+            <span id="span2"></span>
+        </div>
+        <div class="div_form" style="margin-left:293px;">
+            <span class="redstar">*</span>
+            手机号 :
+            <input id="phone" name="phone" class="div_table" type="text" maxlength="24">
+            <span id="span3"></span>
+        </div>
+        <div class="div_form" style="margin-left:310px;">
+            <span class="redstar">*</span>
+            宿舍 :
+            <select name="dong1" style="width: 45px;height: 40px; margin-left: 5px;">
+                <option value="0">&nbsp;0</option>
+                <option value="1">&nbsp;1</option>
+                <option value="2">&nbsp;2</option>
+                <option value="3">&nbsp;3</option>
+                <option value="4">&nbsp;4</option>
+                <option value="5">&nbsp;5</option>
+                <option value="6">&nbsp;6</option>
+                <option value="7">&nbsp;7</option>
+                <option value="8">&nbsp;8</option>
+                <option value="9">&nbsp;9</option>
+            </select>
+            <select name="dong2" style="width: 45px;height: 40px;">
+                <option value="0">&nbsp;0</option>
+                <option value="1">&nbsp;1</option>
+                <option value="2">&nbsp;2</option>
+                <option value="3">&nbsp;3</option>
+                <option value="4">&nbsp;4</option>
+                <option value="5">&nbsp;5</option>
+                <option value="6">&nbsp;6</option>
+                <option value="7">&nbsp;7</option>
+                <option value="8">&nbsp;8</option>
+                <option value="9">&nbsp;9</option>
+            </select>
+            楼
+            <select name="ceng" style="width: 45px;height: 40px;">
+                <option value="1">&nbsp;1</option>
+                <option value="2">&nbsp;2</option>
+                <option value="3">&nbsp;3</option>
+                <option value="4">&nbsp;4</option>
+                <option value="5">&nbsp;5</option>
+                <option value="6">&nbsp;6</option>
+            </select>
+            层
+            <select name="shi1" style="width: 45px;height: 40px;">
+                <option value="0">&nbsp;0</option>
+                <option value="1">&nbsp;1</option>
+                <option value="2">&nbsp;2</option>
+                <option value="3">&nbsp;3</option>
+            </select>
+            <select name="shi2" style="width: 45px;height: 40px;">
+                <option value="0">&nbsp;0</option>
+                <option value="1">&nbsp;1</option>
+                <option value="2">&nbsp;2</option>
+                <option value="3">&nbsp;3</option>
+                <option value="4">&nbsp;4</option>
+                <option value="5">&nbsp;5</option>
+                <option value="6">&nbsp;6</option>
+                <option value="7">&nbsp;7</option>
+                <option value="8">&nbsp;8</option>
+                <option value="9">&nbsp;9</option>
+            </select>
+            室
+            <span id="span4"></span>
+        </div>
+        <div class="div_form" style="margin-left:310px;">
+            <button id="info_but" class="regsub" type="submit" onClick="return infocheck()">注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    function infocheck(){
+        if(document.forms["infoform"]["tname"].value==''){
+            $("#span1").html('<img src="/images/log_before/text_error.png"><font color=red>姓名不能为空!</font>');
+            return false;
+        }else{$("#span1").html('');}
+        if(document.forms["infoform"]["number"].value==''){
+            $("#span2").html('<img src="/images/log_before/text_error.png"><font color=red>学号不能为空!</font>');
+            return false;
+        }else if(!(/^[0-9]{1,}$/.test(document.forms["infoform"]["number"].value))){
+            $("#span2").html('<img src="/images/log_before/text_error.png"><font color=red>学号格式不正确!</font>');
+            return false;
+        }else{$("#span2").html('');}
+        if(document.forms["infoform"]["phone"].value==''){
+            $("#span3").html('<img src="/images/log_before/text_error.png"><font color=red>手机号不能为空!</font>');
+            return false;
+        }else if(!(/^[0-9]{1,}$/.test(document.forms["infoform"]["phone"].value))){
+            $("#span3").html('<img src="/images/log_before/text_error.png"><font color=red>手机号格式不正确!</font>');
+            return false;
+        }else{$("#span3").html('');}
+
+        var d1 = document.forms["infoform"]["dong1"].value;
+        var d2 = document.forms["infoform"]["dong2"].value;
+        var s1 = document.forms["infoform"]["shi1"].value;
+        var s2 = document.forms["infoform"]["shi2"].value;
+
+        if(d1==0&&d2==0){
+            $("#span4").html('<img src="/images/log_before/text_error.png" style="margin-left: 10px;"><font color=red>楼号不能为零!</font>');
+            return false;
+        }else if(s1==0&&s2==0){
+            $("#span4").html('<img src="/images/log_before/text_error.png"  style="margin-left: 10px;"><font color=red>宿舍不能为零!</font>');
+            return false;
+        }else{$("#span4").html('');}
+    }
+</script>
+</body>
+</html>

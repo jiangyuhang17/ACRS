@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>空调租赁用户界面</title>
+    <link href="base.css" rel="stylesheet">
+    <link href="platform.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="pf-hd">
+        <div class="pf-logo">
+            <img src="imgs/main/logo.png" alt="logo">
+            <h1 class="system-name">空调租赁用户界面</h1>
+        </div>
+
+        <ul class="pf-nav">
+            <li class="pf-nav-item">
+                <a href="\user">
+                    <span class="pf-nav-icon project-icon"></span>
+                    <span class="pf-nav-title">租赁缴费</span>
+                </a>
+            </li>
+            <li class="pf-nav-item current">
+                <a href="\history">
+                    <span class="pf-nav-icon static-icon"></span>
+                    <span class="pf-nav-title">查询历史</span>
+                </a>
+            </li>
+            <li class="pf-nav-item">
+                <a href="\userinfo">
+                    <span class="pf-nav-icon manger-icon"></span>
+                    <span class="pf-nav-title">用户信息</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="pf-user">
+            <div class="pf-user-photo">
+                <img src="imgs/main/user.png" alt="">
+            </div>
+            <h4 class="pf-user-name ellipsis">&nbsp;&nbsp;User</h4>
+            <i class="iconfont xiala">&#xe618;</i>
+
+            <div class="pf-user-panel">
+                <ul class="pf-user-opt">
+                    <li>
+                        <a href="\userinfo">
+                            <i class="iconfont">&#xe606;</i>
+                            <span class="pf-opt-name">用户信息</span>
+                        </a>
+                    </li>
+                    <li class="pf-modify-pwd">
+                        <a  href="\passchange">
+                            <i class="iconfont">&#xe613;</i>
+                            <span class="pf-opt-name">修改密码</span>
+                        </a>
+                    </li>
+                    <li class="pf-logout">
+                        <a href="/">
+                            <i class="iconfont">&#xe60e;</i>
+                            <span class="pf-opt-name">退出</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="pf-bd">
+            <div id="pf-sider">
+                <h2 class="pf-model-name">
+                    <span class="pf-sider-icon"></span>
+                    <span class="pf-name">项目</span>
+                </h2>
+
+                <ul class="sider-nav">
+                    <li class="current">
+                        <a href="\history">
+                            <img src="imgs/main/l07.png">
+                            <span class="sider-nav-title">租赁历史</span>
+                            <i class="iconfont">&#xe611;</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="pf-page">
+                <div id="pf-sider">
+                    <h2 class="pf-model-name">
+                        <span class="pf-sider-icon"></span>
+                        <span class="pf-name">项目</span>
+                    </h2>
+
+                    <ul class="sider-nav">
+                        <li class="current">
+                            <a href="/history">
+                                <img src="imgs/main/l07.png">
+                                <span class="sider-nav-title">查询历史</span>
+                                <i class="iconfont">&#xe611;</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="pf-page">
+                    <div class="container">
+                        <div id="inner-hd">
+                            <div class="crumbs">
+                                <i class="crumbs-arrow"></i>
+                                <a class="crumbs-label">查询历史</a>
+                            </div>
+                        </div>
+
+                        <div id="inner-bd">
+                                <div class="button-group">
+                                    <a href="history">
+                                    <button id="btn1" class="button current add">
+                                        <span class="button-label" style="margin-bottom: 15px;">1</span>
+                                    </button></a>
+                                    <button id="btn2" class="button current add" onclick="sec()">
+                                        <span class="button-label" style="margin-bottom: 15px;">2</span>
+                                    </button>
+                                    <button id="btn3" class="button current add" onclick="thr()">
+                                        <span class="button-label" style="margin-bottom: 15px;">3</span>
+                                    </button>
+                                    <button id="btn4" class="button current add" onclick="forth()">
+                                        <span class="button-label" style="margin-bottom: 15px;">4</span>
+                                    </button>
+                                    <button id="btn5" class="button current add" onclick="fif()">
+                                        <span class="button-label" style="margin-bottom: 15px;">5</span>
+                                    </button>
+                                    <button id="btn6" class="button current add" onclick="six()">
+                                        <span class="button-label" style="margin-bottom: 15px;">6</span>
+                                    </button>
+                                    <button id="btn7" class="button current add" onclick="seven()">
+                                        <span class="button-label" style="margin-bottom: 15px;">7</span>
+                                    </button>
+                                    <button id="btn8" class="button current add" onclick="eight()">
+                                        <span class="button-label" style="margin-bottom: 15px;">8</span>
+                                    </button>
+                                    <button id="btn9" class="button current add" onclick="nine()">
+                                        <span class="button-label" style="margin-bottom: 15px;">9</span>
+                                    </button>
+                                    <button id="btn10" class="button current add" onclick="ten()">
+                                        <span class="button-label" style="margin-bottom: 15px;">10</span>
+                                    </button>
+                                </div>
+
+                                <table class="kv-table">
+                                    <tbody>
+                                    <tr>
+                                        <td class="kv-label">
+                                            用户名
+                                        </td>
+                                        <td class="kv-label">
+                                            宿舍号
+                                        </td>
+                                        <td class="kv-label">
+                                            租赁月份
+                                        </td>
+                                        <td class="kv-label">
+                                            支付方式
+                                        </td>
+                                        <td class="kv-label">
+                                            租赁价格
+                                        </td>
+                                        <td class="kv-label">
+                                            租赁时间
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his11" ></span></td>
+                                        <td class="kv-label"><span id="his12" ></span></td>
+                                        <td class="kv-label"><span id="his13" ></span></td>
+                                        <td class="kv-label"><span id="his14" ></span></td>
+                                        <td class="kv-label"><span id="his15" ></span></td>
+                                        <td class="kv-label"><span id="his16" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his21" ></span></td>
+                                        <td class="kv-label"><span id="his22" ></span></td>
+                                        <td class="kv-label"><span id="his23" ></span></td>
+                                        <td class="kv-label"><span id="his24" ></span></td>
+                                        <td class="kv-label"><span id="his25" ></span></td>
+                                        <td class="kv-label"><span id="his26" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his31" ></span></td>
+                                        <td class="kv-label"><span id="his32" ></span></td>
+                                        <td class="kv-label"><span id="his33" ></span></td>
+                                        <td class="kv-label"><span id="his34" ></span></td>
+                                        <td class="kv-label"><span id="his35" ></span></td>
+                                        <td class="kv-label"><span id="his36" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his41" ></span></td>
+                                        <td class="kv-label"><span id="his42" ></span></td>
+                                        <td class="kv-label"><span id="his43" ></span></td>
+                                        <td class="kv-label"><span id="his44" ></span></td>
+                                        <td class="kv-label"><span id="his45" ></span></td>
+                                        <td class="kv-label"><span id="his46" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his51" ></span></td>
+                                        <td class="kv-label"><span id="his52" ></span></td>
+                                        <td class="kv-label"><span id="his53" ></span></td>
+                                        <td class="kv-label"><span id="his54" ></span></td>
+                                        <td class="kv-label"><span id="his55" ></span></td>
+                                        <td class="kv-label"><span id="his56" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his61" ></span></td>
+                                        <td class="kv-label"><span id="his62" ></span></td>
+                                        <td class="kv-label"><span id="his63" ></span></td>
+                                        <td class="kv-label"><span id="his64" ></span></td>
+                                        <td class="kv-label"><span id="his65" ></span></td>
+                                        <td class="kv-label"><span id="his66" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his71" ></span></td>
+                                        <td class="kv-label"><span id="his72" ></span></td>
+                                        <td class="kv-label"><span id="his73" ></span></td>
+                                        <td class="kv-label"><span id="his74" ></span></td>
+                                        <td class="kv-label"><span id="his75" ></span></td>
+                                        <td class="kv-label"><span id="his76" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his81" ></span></td>
+                                        <td class="kv-label"><span id="his82" ></span></td>
+                                        <td class="kv-label"><span id="his83" ></span></td>
+                                        <td class="kv-label"><span id="his84" ></span></td>
+                                        <td class="kv-label"><span id="his85" ></span></td>
+                                        <td class="kv-label"><span id="his86" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his91" ></span></td>
+                                        <td class="kv-label"><span id="his92" ></span></td>
+                                        <td class="kv-label"><span id="his93" ></span></td>
+                                        <td class="kv-label"><span id="his94" ></span></td>
+                                        <td class="kv-label"><span id="his95" ></span></td>
+                                        <td class="kv-label"><span id="his96" ></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kv-label"><span id="his101" ></span></td>
+                                        <td class="kv-label"><span id="his102" ></span></td>
+                                        <td class="kv-label"><span id="his103" ></span></td>
+                                        <td class="kv-label"><span id="his104" ></span></td>
+                                        <td class="kv-label"><span id="his105" ></span></td>
+                                        <td class="kv-label"><span id="his106" ></span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            <span id="wu"></span>
+                            <span style="float: right;padding-top: 20px;font-size: 20px;padding-right: 10px;">最多显示10页数据,想要获取更多请&nbsp&nbsp<a href="/contact">联系我们</a>&nbsp&nbsp!</span>
+                        </div>
+
+                        <div id="inner-ft">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script>
+    var james = {"MVP":"1"};
+    $.ajax({
+        url: '/historydata',
+        type: 'post',
+        data: james,
+        success: function(s){
+            if(s.length==0)
+                document.getElementById("wu").innerHTML = '暂无租赁记录';
+            var l = s.length/10;
+            l = parseInt(l);
+            console.log(l);
+            switch (l) {
+                case 0 :
+                    for (var i = 2; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 1 :
+                    for (var i = 3; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 2:
+                    for (var i = 4; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 3:
+                    for (var i = 5; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 4:
+                    for (var i = 6; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 5:
+                    for (var i = 7; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 6:
+                    for (var i = 8; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 7:
+                    for (var i = 9; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+                case 8:
+                    for (var i = 10; i < 11; i++) {
+                        document.getElementById("btn" + i).style.display = 'none'
+                    }
+                    ;
+            }
+            var a = s.length;
+            if(a>9){
+                for(var i=1;i<11;i++){
+                    document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                    document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                    document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                    document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                    document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                    document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                }
+            }else{
+                for(var i=1;i<a+1;i++) {
+                    document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                    document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                    document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                    document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                    document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                    document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                }
+            }
+
+        },
+        error: function(){alert('Error!');}
+    });
+</script>
+<script>
+    function sec(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function thr(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*2;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his" + i + 3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function forth(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*3;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his" + i + 3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function fif(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*4;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function six(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*5;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function seven(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*6;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function eight(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*7;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function nine(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*8;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+<script>
+    function ten(){
+        var james = {"MVP":"1"};
+        $.ajax({
+            url: '/historydata',
+            type: 'post',
+            data: james,
+            success: function(s){
+                var a = s.length;
+                a = a-10*9;
+                for(var j=1;j<11;j++){
+                    document.getElementById("his"+j+1).innerHTML = '';
+                    document.getElementById("his"+j+2).innerHTML = '';
+                    document.getElementById("his"+j+3).innerHTML = '';
+                    document.getElementById("his"+j+4).innerHTML = '';
+                    document.getElementById("his"+j+5).innerHTML = '';
+                    document.getElementById("his"+j+6).innerHTML = '';
+                }
+                if(a>9){
+                    for(var i=1;i<11;i++){
+                        document.getElementById("his"+i+1).innerHTML = s[a-i].username;
+                        document.getElementById("his"+i+2).innerHTML = s[a-i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his"+i+4).innerHTML = s[a-i].payway;
+                        document.getElementById("his"+i+5).innerHTML = s[a-i].money;
+                        document.getElementById("his"+i+6).innerHTML = s[a-i].paydate;
+                    }
+                }else{
+                    for(var i=1;i<a+1;i++) {
+                        document.getElementById("his" + i + 1).innerHTML = s[a - i].username;
+                        document.getElementById("his" + i + 2).innerHTML = s[a - i].room;
+                        document.getElementById("his"+i+3).innerHTML = s[a-i].month;
+                        document.getElementById("his" + i + 4).innerHTML = s[a - i].payway;
+                        document.getElementById("his" + i + 5).innerHTML = s[a - i].money;
+                        document.getElementById("his" + i + 6).innerHTML = s[a - i].paydate;
+                    }
+                }
+
+            },
+            error: function(){alert('Error!');}
+        });
+    }
+</script>
+</body>
+</html>

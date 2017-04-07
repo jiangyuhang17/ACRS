@@ -1,0 +1,49 @@
+@charset "utf-8";
+body{
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background:url(../images/log_before/login_bg.png) top;
+	font-family:"微软雅黑";
+}
+
+#topindex{
+	height:50px;
+	width:100%;
+	font-size:14px;
+	background-color:#666;
+	opacity:0.8;
+	text-align:center;
+}
+
+#title{
+	margin-top:15px;
+	font-size:44px;
+	height:100px;
+	width:100%;
+	color:#fff;
+	text-align:center;
+}
+
+#process{position:absolute;width:560px;height:70px;margin-top:30px;margin-left:265px;}
+#regform{position:absolute;width:100%;height:450px;margin-top:120px;}
+#infoform{position:absolute;width:100%;height:450px;margin-top:120px;}
+.regsub{height:60px;width:300px;margin-top:30px;margin-left:70px;background:url(../images/log_before/regbg_fir.jpg);color:#FFF;font-size:22px}
+.regsub:hover{height:60px;width:300px;margin-top:30px;margin-left:70px;background:url(../images/log_before/regbg.jpg);color:#FFF;font-size:22px}
+
+.redstar{color:#F00;}
+
+body .left-bg{position:absolute;left:0;top:50%;width:659px;height:567px;margin-top:-284px;background:url(../images/log_before/login_left.png) no-repeat;opacity:0.6}
+body .right-bg{position:absolute;right:0;top:50%;width:661px;height:567px;margin-top:-284px;background:url(../images/log_before/login_right.png) no-repeat;opacity:0.6}
+body .notice-center{position:absolute;left:50%;top:200px;margin-left:-551px;width:1102px;height:602px;background-color:#fff;border-radius:12px}
+body .notice-center .notice-center-left{position:absolute;top:44px;left:-18px;width:18px;height:250px;background:url(../images/log_before/notice_left.png) no-repeat}
+body .notice-center .notice-center-top{position:absolute;top:0;left:0;width:1102px;height:151px;background:url(../images/log_before/notice_top.png) no-repeat;z-index:0}
+body .notice-center .notice-center-bottom{position:absolute;bottom:-1px;left:0;width:1102px;height:43px;background:url(../images/log_before/notice_foot.png) no-repeat}
+
+.div_form{height:48px; margin-top:24px; margin-bottom:24px;font-size:18px;}
+.div_table{height:48px;width:320px; border-radius:7px; padding:10px;}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/notice.css">
+    <title>联系我们</title>
+</head>
+
+<body>
+<div class="left-bg"></div>
+<div class="right-bg"></div>
+<div id="topindex">
+    <table width="100%">
+        <tr style="height:17px">
+            <td>
+            <td>
+        </tr>
+        <tr>
+            <td style="padding-left:20px; width:50%"><span style=" float:left;color: #FFF; font-family:'Times New Roman', Times, serif">欢迎来到空调租赁缴费平台</span><td>
+            <td style="padding-right:30px"><span style=" float:right; font-family:'Times New Roman', Times, serif">
+            	<a style="color:#FFF;padding-right:20px" href="/">首页</a>
+                <a style="color:#FFF" href="/contact">联系我们</a>
+                </span></td>
+        </tr>
+    </table>
+</div>
+<div class="left-bg"></div>
+<div class="right-bg"></div>
+<div id="title"><img src="/images/log_before/logo.png"></div>
+
+<form id="cont" action="/contact" method="post">
+    <div class="notice-center">
+        <div class="notice-center-top"></div>
+        <div class="notice-center-left"></div>
+        <div class="notice-center-bottom"></div>
+        <div class="notice-title">
+            <i class="notice-icon"></i>
+            <span>联系我们</span>
+        </div>
+        <div class="name">
+            <span class="redstar">*</span>
+            姓名<br />
+            <input type="text" id="username" name="username" required style="margin-top:10px; height:40px; width:200px">
+        </div>
+        <div class="mail">
+            <span class="redstar">*</span>
+            电子邮箱<br />
+            <input type="text" id="mail" name="mail" required style="margin-top:10px; height:40px; width:300px">
+        </div>
+        <div class="contactcontent">
+            <span class="redstar">*</span>
+            内容<br />
+            <textarea id="contact" name="contact" placeholder="限249字" required style="margin-top:10px; height:200px; width:570px;"></textarea>
+        </div>
+        <input type="submit" value="提交" class="sub_btn" onClick="return check()">
+        <input type="reset" value="重置" class="reset_btn">
+    </div>
+</form>
+<script type="text/javascript">
+    function check(){
+        var mailtest = document.forms["cont"]["mail"].value;
+        if(document.forms["cont"]["username"].value==''){
+            alert("请填写姓名");
+            return false;
+        }
+
+        if(mailtest==''){
+            alert("请填写电子邮箱");
+            return false;
+        }
+
+        else{
+            if(!isMail(mailtest)){
+                alert("邮箱格式错误");
+                return false;
+            }
+        }
+
+        if(document.forms["cont"]["contact"].value=='')
+            alert("请填写内容");
+    }
+
+    function isMail(mail){
+        var mymail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,5})+$/;
+        return mymail.test(mail);
+    }
+</script>
+<script>
+    <%- s %>
+    if(a)
+        alert('已提交成功！');
+</script>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

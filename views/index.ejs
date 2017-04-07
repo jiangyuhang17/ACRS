@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,user-scalable=no" name="viewport">
+  <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/index_login.css">
+  <title>空调租赁缴费平台首页</title>
+</head>
+
+<body>
+<div class="left-bg"></div>
+<div class="right-bg"></div>
+<div id="topindex">
+  <table width="100%">
+    <tr style="height:17px">
+      <td>
+      <td>
+    </tr>
+    <tr>
+      <td style="padding-left:20px; width:50%"><span style=" float:left;color: #FFF; font-family:'Times New Roman', Times, serif">欢迎来到空调租赁缴费平台</span><td>
+      <td style="padding-right:30px"><span style=" float:right; font-family:'Times New Roman', Times, serif">
+            	<a style="color:#FFF;padding-right:20px" href="/">首页</a>
+                <a style="color:#FFF" href="/contact">联系我们</a>
+            </span></td>
+    </tr>
+  </table>
+</div>
+
+<div id="title"><img src="/images/log_before/logo.png"></div>
+
+<div class="login-center">
+  <div class="login-content">
+    <div class="notice">
+      <div class="notice-title">
+        <i class="notice-icon"></i>
+        <span style="font-size:26px">通知公告</span>
+      </div>
+      <!--<span style="position: absolute;padding-top: 20px;padding-left: 55px; font-size: 18px;">暂无消息</span>-->
+      <ul class="notice-list">
+        <li class="list-item ellipsis">
+          <a href="/notice_mod">
+            <i class="rt-icon"></i>
+            高校学生公寓空调租赁系统
+          </a>
+        </li>
+      </ul>
+        <!--<li class="list-item ellipsis">-->
+          <!--<a>-->
+            <!--<i class="rt-icon"></i>-->
+            <!--学生宿舍空调租赁缴费细则-->
+          <!--</a>-->
+        <!--</li>-->
+        <!--<li class="list-item ellipsis">-->
+          <!--<a>-->
+            <!--<i class="rt-icon"></i>-->
+            <!--学生宿舍空调租赁系统操作指南-->
+          <!--</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    </div>
+    <form id="login" action="/" method="post">
+      <div class="login-input">
+        <div class="login-label">用户登录</div>
+        <div class="username">
+          <i class="username-icon"></i>
+          <input id="login_user" name="login_user" type="text" placeholder="用户" required>
+        </div>
+        <div class="password">
+          <i class="password-icon"></i>
+          <input id="login_pass" name="login_pass" type="password" placeholder="密码" required>
+        </div>
+        <button type="submit" class="login-btn" onClick="logincheck()">登录</button>
+        <div class="reg-remain">还没有账号？<a href="/register" style="color : #fff;">立即注册!</a></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="end">© 2017 江南大学 物联网工程学院</div>
+<script>
+  function logincheck(){
+    if(document.forms["login"]["login_user"].value=='')
+      alert("用户名不能为空");
+    else if(document.forms["login"]["login_pass"].value=='')
+      alert("密码不能为空");
+  }
+</script>
+<%- error %>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

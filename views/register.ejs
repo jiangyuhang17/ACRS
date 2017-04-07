@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <title>用户注册</title>
+</head>
+
+<body>
+<div class="left-bg"></div>
+<div class="right-bg"></div>
+<div id="topindex">
+    <table width="100%">
+        <tr style="height:17px">
+            <td>
+            <td>
+        </tr>
+        <tr>
+            <td style="padding-left:20px; width:50%"><span style=" float:left;color: #FFF; font-family:'Times New Roman', Times, serif">欢迎来到空调租赁缴费平台</span><td>
+            <td style="padding-right:30px"><span style=" float:right; font-family:'Times New Roman', Times, serif">
+            <a style="color:#FFF;padding-right:20px" href="/">首页</a>
+            <a style="color:#FFF" href="/contact">联系我们</a>
+        </span></td>
+        </tr>
+    </table>
+</div>
+
+<div id="title"><img src="/images/log_before/logo.png"></div>
+
+<div class="notice-center">
+    <div class="notice-center-top"></div>
+    <div class="notice-center-left"></div>
+    <div class="notice-center-bottom"></div>
+    <img id="process" src="/images/log_before/processone.jpg">
+    <form id="regform" action="/register" method="post">
+        <div class="div_form" style="margin-left:322px;">
+            用户名 :
+            <input id="username" name="username" class="div_table" type="text" placeholder="您的用户名和登录名" maxlength="24" required>
+            <span id="span1"></span>
+        </div>
+        <div class="div_form" style="margin-left:250px;">
+            请创建一个密码 :
+            <input id="password" name="password" class="div_table" type="password" placeholder="6-20字符，区分大小写" maxlength="24" required>
+            <span id="span2"></span>
+        </div>
+        <div class="div_form" style="margin-left:268px;">
+            重新输入密码 :
+            <input id="password1" class="div_table" type="password" placeholder="请再次输入密码" maxlength="24" required>
+            <span id="span3"></span>
+        </div>
+        <div class="div_form" style="margin-left:330px;">
+            <button id="reg_but" class="regsub" type="submit">注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('reg_but').onclick = function(){
+        if(document.forms["regform"]["username"].value==''){
+            $("#span1").html('<img src="/images/log_before/text_error.png"><font color=red>用户名不能为空!</font>');
+            return false;
+        }else{$("#span1").html('');}
+        var con = document.forms["regform"]["password"].value;
+        var num = document.forms["regform"]["password"].value.length;
+        if(num<6||num>20){
+            $("#span2").html('<img src="/images/log_before/text_error.png"><font color=red>密码格式错误!</font>');
+            return false;
+        }else{$("#span2").html('');}
+        if(document.forms["regform"]["password1"].value!=con){
+            $("#span3").html('<img src="/images/log_before/text_error.png"><font color=red>两次密码不一致!</font>');
+            return false;
+        }else{$("#span3").html('');}
+    }
+</script>
+<script>
+    <%= error %>
+    function err(){
+        alert("用户名已存在");
+    }
+</script>
+</body>
+</html>
